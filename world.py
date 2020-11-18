@@ -36,28 +36,9 @@ def update_all():
     root.after(1500, update_all)
 
 
-def cloud_num():
-    cloud_amounts = []
-    for i in range(365):
-        print(i)
-        cloud_sum = 0
-        for k in range(BOARD_SIZE):
-            for j in range(BOARD_SIZE):
-                if game.board.is_cloudy[k][j] == 1:
-                    cloud_sum += 1
-        cloud_amounts.append(cloud_sum)
-        game.next_generation()
-    plt.plot(list(range(365)), cloud_amounts)
-    plt.xlabel('Days')
-    plt.ylabel('Cloud Amounts')
-    plt.title('Clouds Per Day')
-    plt.show()
-
-
 def main():
-    #start_game()
-    cloud_num()
-    #root.mainloop()
+    start_game()
+    root.mainloop()
 
 
 if __name__ == '__main__':
